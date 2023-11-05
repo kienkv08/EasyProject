@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('../app/modules/homepage/home-page.module').then(m=>m.HomePageModule)
+  },
+  {
+    path: 'my-diary',
+    loadChildren: () => import('../app/modules/diary/diary.module').then(m=>m.DiaryModule)
   }
 ];
 

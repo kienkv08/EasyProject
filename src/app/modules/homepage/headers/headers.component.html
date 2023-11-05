@@ -1,7 +1,7 @@
 <a [routerLink]="['/']" class="cursor-none link-logo"
   ><div class="logo-mini logo text-4xl" #textSlow></div></a
 >
-<div class="toogle dp-af-3s">
+<div class="toogle dp-af-3s" (click)="showHiddenBar()">
   <div class="icons">
     <svg
       width="300"
@@ -37,3 +37,5 @@
 </div>
 <app-text-fade-random></app-text-fade-random>
 <div class="cursor" #cursor></div>
+
+

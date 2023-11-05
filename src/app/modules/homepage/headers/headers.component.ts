@@ -7,15 +7,16 @@ import { Component, HostListener, ViewChild } from '@angular/core';
   styleUrls: ['./headers.component.scss'],
 })
 export class HeadersComponent {
+  isShowHiddenBar = false;
   constructor(){}
   ngOnInit(): void {
     setTimeout(()=>{
       this.displayLogo();
     }, 3000);
-    
+
   }
   ngAfterViewInit(): void {
-    this.handleTextBlink();
+
   }
   @ViewChild('cursor') refCursor: any;
   @HostListener('document:mousemove', ['$event'])
@@ -33,17 +34,26 @@ export class HeadersComponent {
   private displayLogo(currentCharIndex = 0) {
     const logo = LOGO;
     if (currentCharIndex < logo.length) {
-      this.textSlow.nativeElement.innerText += logo[currentCharIndex];
+      if (this.textSlow.nativeElement){
+        this.textSlow.nativeElement.innerText += logo[currentCharIndex];
+      }
       setTimeout(() => {
         this.displayLogo(++currentCharIndex);
       }, 50);
     }
   }
 
-  @ViewChild('textBlink') textBlink: any;
+  // Don't need use this for current
+  //@ViewChild('textBlink') textBlink: any;
 
-  private handleTextBlink() {
-    const logo = LOGO;
-    this.textBlink.nativeElement.innerText += logo;
+  // private handleTextBlink() {
+  //   const logo = LOGO;
+  //   const text-blink = document.getElementById('text-blink');
+  //   this.textBlink.nativeElement.innerText += logo;
+  // }
+
+  public showHiddenBar(){
+    console.log('run');
+    this.isShowHiddenBar = !this.isShowHiddenBar;
   }
 }
