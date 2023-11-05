@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {DiaryLayoutComponent} from "./shared/theme/diary-layout/diary-layout.component";
 
 const routes: Routes = [
   {
@@ -8,6 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'my-diary',
+    component: DiaryLayoutComponent,
     loadChildren: () => import('../app/modules/diary/diary.module').then(m=>m.DiaryModule)
   }
 ];

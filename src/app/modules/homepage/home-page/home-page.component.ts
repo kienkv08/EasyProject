@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
+  isShowSideBar = false;
 
+  showSidebar(event:any){
+    this.isShowSideBar = event;
+  }
+
+  showMainContent(event:any){
+    this.isShowSideBar = event;
+  }
 }

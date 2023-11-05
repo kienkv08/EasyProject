@@ -1,4 +1,4 @@
-<div class="container-fluid bg-black min-h-screen text-white cursor-none">
+<div *ngIf="!isShowSideBar" class="container-fluid bg-black min-h-screen text-white cursor-none">
   <div class="row">
     <app-headers></app-headers>
   </div>
@@ -6,3 +6,6 @@
     <a [routerLink]="['/profile']"><button class="profile-btn text-white text-3xl">Profile</button></a>
   </div>
 </div>
+
+<app-sidebar [colorToggle]="'white'" [displayTime]="3"></app-sidebar>
+<app-cursor-dot></app-cursor-dot>

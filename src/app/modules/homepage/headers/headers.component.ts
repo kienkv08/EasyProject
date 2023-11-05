@@ -7,7 +7,6 @@ import { Component, HostListener, ViewChild } from '@angular/core';
   styleUrls: ['./headers.component.scss'],
 })
 export class HeadersComponent {
-  isShowHiddenBar = false;
   constructor(){}
   ngOnInit(): void {
     setTimeout(()=>{
@@ -17,12 +16,6 @@ export class HeadersComponent {
   }
   ngAfterViewInit(): void {
 
-  }
-  @ViewChild('cursor') refCursor: any;
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: any) {
-    this.refCursor.nativeElement.style.left = event.pageX - 15 + 'px';
-    this.refCursor.nativeElement.style.top = event.pageY - 15 + 'px';
   }
 
   @ViewChild('textSlow') textSlow: any;
@@ -51,9 +44,4 @@ export class HeadersComponent {
   //   const text-blink = document.getElementById('text-blink');
   //   this.textBlink.nativeElement.innerText += logo;
   // }
-
-  public showHiddenBar(){
-    console.log('run');
-    this.isShowHiddenBar = !this.isShowHiddenBar;
-  }
 }
